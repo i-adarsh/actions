@@ -1,0 +1,20 @@
+name: Running script
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  generate_ascii:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: List repo files
+        uses: ls -ltra
+
+      - name: Executing shell script
+        run: |
+          chmod +x cowsay-script.yml
+          ./cowsay-script.yml
