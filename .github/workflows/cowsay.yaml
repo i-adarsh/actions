@@ -25,3 +25,6 @@ jobs:
 
       - name: Read file
         run: cat README.md
+
+      - name: Read file
+        run: cat dragon.txt
