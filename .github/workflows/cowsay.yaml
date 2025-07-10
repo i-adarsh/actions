@@ -1,11 +1,11 @@
-name: DevOps HQ Test
+name: Package installation
 
 on:
   push:
     branches: [main]
 
 jobs:
-  generate ascii:
+  generate_ascii:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
