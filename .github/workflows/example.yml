@@ -6,6 +6,9 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repository
+        users: actions/checkout@v4
+
       - name: Welcome message
         run: echo "Hello from Github Actions job"
 
