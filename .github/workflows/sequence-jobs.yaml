@@ -1,0 +1,34 @@
+name: Sequence jobs workflow
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build_job_1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install package
+        run: sudo apt install cowsay -y
+      - name: execute cowsay
+        run: cowsay -f dragon "hello from github workflow" >> test.txt
+      - name: Sleep for 30 seconds
+        run: sleep 30
+
+  build_job_2:
+    needs: build_job_1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sleep for 10 seconds
+        run: sleep 10
+      - name: Check if file exists
+        run: grep -i "github" test.txt
+
+  build_job_3:
+    needs: build_job_2
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read file
+        run: cat test.txt
+      - name: Deploying changes
+        run: echo "Deployed successfully"
