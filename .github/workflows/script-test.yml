@@ -16,5 +16,5 @@ jobs:
 
       - name: Executing shell script
         run: |
-          chmod +x cowsay-script.yml
-          ./cowsay-script.yml
+          chmod +x cowsay-script.sh
+          ./cowsay-script.sh
