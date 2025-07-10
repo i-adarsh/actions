@@ -5,14 +5,14 @@ on:
     branches: [main]
 
 jobs:
-  generate_ascii:
+  running_script:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: List repo files
-        uses: ls -ltra
+        run: ls -ltra
 
       - name: Executing shell script
         run: |
