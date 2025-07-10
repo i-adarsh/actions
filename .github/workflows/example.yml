@@ -1,0 +1,16 @@
+name: DevOps HQ Test
+
+on: push
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Welcome message
+        run: echo "Hello from Github Actions job"
+
+      - name: List files
+        run: ls
+
+      - name: Read file
+        run: cat README.md
